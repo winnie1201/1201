@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tag Menu</title>
+    <style>
+        .tag{
+            margin-right:20px;
+            letter-spacing: 2px;
+            cursor:pointer;
+        }
+        .current-tag{
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <span id="basic" class="tag current-tag" onclick="change(2);">基本資料</span>
+        <span id="exp" class="tag" onclick="change(10);">學經歷</span>
+        <span id="work" class="tag" onclick="change(20);">作品</span>
+    </div>
+    <hr/>
+        <!-- display:none/display:block/display:none-->
+        <div></div>
+        <div></div>
+        <div></div>
+    <script>
+        function change(index){
+            let basic=window.document.getElementById("basic");
+            let exp=window.document.getElementById("exp");
+            let work=window.document.getElementById("work");
+            if(index==2){
+                basic.className="tag current-tag";
+                exp.className="tag";
+                work.className="tag";
+            }else if(index==10){
+                basic.className="tag";
+                exp.className="tag current-tag";
+                work.className="tag";
+
+            }else if(index==20){
+                basic.className="tag";
+                exp.className="tag";
+                work.className="tag current-tag";
+            }
+            
+        }
+    </script>
+</body>
+</html>
