@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .test{
+            color:red;
+        }
+        .test-1{
+            color:green;
+        }
+        .box{
+            width:200px;height:100px;background-color:#cccccc;
+            border:1px solid #888888;box-shadow:0px 0px 5px #000000;
+            text-align:center;opacity: 1;position:fixed;left:0px;top:0px;
+        }
+
+    </style>
+</head>
+<body>
+    <h3>HTML DOM</h3>
+    <div id="content" class="test">這是 HTML DOM的教學</div>
+    <div id="title" class="box" style="transition:opacity 0.5s;">這是對話框</div>
+    
+    <!--
+        1.一開始隱藏
+        2.點擊顯示的時候顯示
+        3.顯示的方式必須覆蓋別的元件
+        4.放在頁面的中間
+        5.隱藏的按鈕應該放在對話框的內部
+
+    -->
+    <button onclick="change();">改變</button>
+    <button onclick="hide();">隱藏</button>
+    <button onclick="show();">顯示</button>
+    
+    <script>
+        function hide(){
+            let element=window.document.getElementById("title");
+            element.style.opacity=0;
+        }
+        function show(){
+            let element=window.document.getElementById("title");
+            element.style.opacity=1;
+          
+        }
+        function change(){
+            //1.在程式中取得想要更新的標籤(HTML Element)
+            //利用window.document.getElementById(標籤ID)取得想要操作的標籤
+            let element=window.document.getElementById("content");
+            
+            //2.針對取得的標籤進行操作
+            //2.1操作標籤的HTML屬性；標籤.屬性名稱
+            element.innerHTML="這是新的文字";
+            element.className="test-1";
+            //2.2操作標籤的個別CSS屬性：標籤.style.CSS屬性名稱
+            console.log(element.style);
+            element.style.fontSize="30px";
+            element.style.color="black";
+        }
+        
+
+    
+    
+    </script>
+</body>
+</html>
