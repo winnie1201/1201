@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tag Menu</title>
+    <style>
+        .tag{
+            margin-right:20px;
+            letter-spacing: 2px;
+            cursor:pointer;
+        }
+        .current-tag{
+            color:red;
+        }
+        .menu{
+            display:none;
+        }
+      
+        
+        
+    </style>
+</head>
+<body>
+    <div>
+        <span id="basic" class="tag current-tag" onclick="change(2);">基本資料</span>
+        <span id="exp" class="tag" onclick="change(10);">學經歷</span>
+        <span id="work" class="tag" onclick="change(20);">作品</span>
+    </div>
+    <hr/>
+        <!-- display:none/display:block/display:none-->
+        <div id="content1" class="menu">
+            你好你好你好你好你好你好
+        </div>
+        <div id="content2" class="menu">
+             2016 06
+             2017
+             2018
+             2019
+             2020
+             2021
+        </div>
+        <div id="content3" class="menu">
+            22222
+            22222
+            22222
+            2222
+            2222
+
+        </div>
+    <script>
+        function change(index){
+            let basic=window.document.getElementById("basic");
+            let exp=window.document.getElementById("exp");
+            let work=window.document.getElementById("work");
+            let content1=window.document.getElementById("content1");
+            let content2=window.document.getElementById("content2");
+            let content3=window.document.getElementById("content3");
+            if(index==2){
+                basic.className="tag current-tag";
+                exp.className="tag";
+                work.className="tag";
+                content1.className="content1";
+                content2.className="menu";
+                content3.className="menu";
+            }else if(index==10){
+                basic.className="tag";
+                exp.className="tag current-tag";
+                work.className="tag";
+                content1.className="menu";
+                content2.className="content2";
+                content3.className="menu";
+            }else if(index==20){
+                basic.className="tag";
+                exp.className="tag";
+                work.className="tag current-tag";
+                content1.className="menu";
+                content2.className="menu";
+                content3.className="content3";
+            }
+            
+        }
+       
+    </script>
+</body>
+</html>
